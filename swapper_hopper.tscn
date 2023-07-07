@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://ljc45x48loyi"]
+
+[ext_resource type="Script" path="res://swapper_hopper.gd" id="1_yjogo"]
+[ext_resource type="PackedScene" uid="uid://ddkx0v5dpnxc0" path="res://coin.tscn" id="2_1k1rv"]
+[ext_resource type="PackedScene" uid="uid://cwqdqnr77m7qq" path="res://platform.tscn" id="3_csa6d"]
+
+[node name="SwapperHopper" type="Node2D"]
+script = ExtResource("1_yjogo")
+
+[node name="Scene1" parent="." instance=ExtResource("2_1k1rv")]
+
+[node name="Scene2" parent="." instance=ExtResource("3_csa6d")]

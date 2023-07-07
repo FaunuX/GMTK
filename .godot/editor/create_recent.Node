@@ -1,0 +1,10 @@
+AnimatedSprite2D
+Node2D
+CollisionShape2D
+StaticBody2D
+Node
+CanvasLayer
+Label
+TextureRect
+MarginContainer
+Area2D

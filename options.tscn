@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://bf5iwhjeu13sp"]
+
+[ext_resource type="Script" path="res://Keybindchanger.gd" id="1_jprw6"]
+[ext_resource type="Script" path="res://Creditsbutton.gd" id="2_leesd"]
+
+[node name="Options" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+
+[node name="Keybindchanger" type="Button" parent="."]
+offset_left = -152.0
+offset_top = -64.0
+offset_right = -16.0
+offset_bottom = -10.0
+text = "Change keybind:
+swap "
+text_overrun_behavior = 3
+script = ExtResource("1_jprw6")
+
+[node name="Creditsbutton" type="Button" parent="."]
+offset_left = 16.0
+offset_top = -64.0
+offset_right = 152.0
+offset_bottom = -10.0
+text = "Credits"
+text_overrun_behavior = 3
+script = ExtResource("2_leesd")
+
+[connection signal="button_down" from="Keybindchanger" to="Keybindchanger" method="_on_button_down"]
+[connection signal="button_down" from="Creditsbutton" to="Creditsbutton" method="_on_button_down"]
