@@ -11,7 +11,7 @@ func _ready():
 func _process(delta): 
 	if resettimer <= 0:
 		self.text = "Change keybind:
-swap "
+switch "
 	else:
 		resettimer -= delta
 
@@ -21,8 +21,8 @@ func _on_button_down():
 
 func _input(event):
 	if event is InputEventKey and event.pressed and lookingforkey:
-		InputMap.action_erase_events("swap")
-		InputMap.action_add_event("swap", event)
+		InputMap.action_erase_events("switch")
+		InputMap.action_add_event("switch", event)
 		self.text = "Swap set to " + str(event.as_text())
 		resettimer = resettimermax
 		lookingforkey = false
