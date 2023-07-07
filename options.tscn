@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bf5iwhjeu13sp"]
+[gd_scene load_steps=3 format=3 uid="uid://b76aa62it2s13"]
 
 [ext_resource type="Script" path="res://Keybindchanger.gd" id="1_jprw6"]
-[ext_resource type="Script" path="res://Creditsbutton.gd" id="2_leesd"]
+[ext_resource type="Script" path="res://Backbutton.gd" id="2_mtosr"]
 
 [node name="Options" type="Node2D"]
 
@@ -25,7 +25,16 @@ offset_right = 152.0
 offset_bottom = -10.0
 text = "Credits"
 text_overrun_behavior = 3
-script = ExtResource("2_leesd")
+
+[node name="Backbutton" type="Button" parent="."]
+offset_left = -64.0
+offset_top = 40.0
+offset_right = 72.0
+offset_bottom = 94.0
+text = "Back"
+text_overrun_behavior = 3
+script = ExtResource("2_mtosr")
 
 [connection signal="button_down" from="Keybindchanger" to="Keybindchanger" method="_on_button_down"]
 [connection signal="button_down" from="Creditsbutton" to="Creditsbutton" method="_on_button_down"]
+[connection signal="button_down" from="Backbutton" to="Backbutton" method="_on_button_down"]
