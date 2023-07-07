@@ -1,5 +1,4 @@
 res://Player.tscn
-res://Keybindchanger.gd
 res://coin.tscn
 res://gui.tscn
 res://swapper_hopper.tscn
@@ -7,5 +6,4 @@ res://platform.tscn
 res://Main.tscn
 res://options.tscn
 res://title_screen.tscn
-res://Startbutton.gd
 res://Level.tscn
