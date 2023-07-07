@@ -12,7 +12,6 @@ func _ready():
 	render_state()
 
 func render_state():
-	print("yodooga")
 	if state == ValidStates.V1:
 		$Scene1/CollisionShape2D.set_deferred("disabled", false)
 		$Scene1.visible = true
