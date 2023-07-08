@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://ksg500hd6nnm"]
+
+[ext_resource type="PackedScene" uid="uid://ljc45x48loyi" path="res://swapper_hopper.tscn" id="1_2svdg"]
+
+[node name="StartsAsCoin" type="Node2D"]
+
+[node name="SwapperHopper" parent="." instance=ExtResource("1_2svdg")]

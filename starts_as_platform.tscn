@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhby7bmg7bghh"]
+
+[ext_resource type="PackedScene" uid="uid://ljc45x48loyi" path="res://swapper_hopper.tscn" id="1_eynk1"]
+
+[node name="StartsAsPlatform" type="Node2D"]
+
+[node name="SwapperHopper" parent="." instance=ExtResource("1_eynk1")]
+state = 1
