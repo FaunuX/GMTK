@@ -14,13 +14,13 @@ func _process(delta):
 
 func next_level():
 	if str(get_tree().current_scene.get_path()) == "/root/Level 1":
-		scene = 3
-	if str(get_tree().current_scene.get_path()) == "/root/Level 2":
 		scene = 4
+	if str(get_tree().current_scene.get_path()) == "/root/Level 2":
+		scene = 5
 	if str(get_tree().current_scene.get_path()) == "/root/Level 3":
 		scene = 2
 	if str(get_tree().current_scene.get_path()) == "/root/Level 4":
-		scene = 5
+		scene = 3
 	if str(get_tree().current_scene.get_path()) == "/root/Level 5":
 		scene = 6
 	if str(get_tree().current_scene.get_path()) == "/root/Level 6":

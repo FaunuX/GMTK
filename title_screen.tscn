@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://b3mqwvlo4nyy2"]
+[gd_scene load_steps=10 format=3 uid="uid://b3mqwvlo4nyy2"]
 
 [ext_resource type="FontFile" uid="uid://c8at56y52mmo8" path="res://Chibolddemo-1GD7g.ttf" id="1_2xvef"]
 [ext_resource type="Script" path="res://Optionsbutton.gd" id="1_4arop"]
 [ext_resource type="Script" path="res://Startbutton.gd" id="2_r2d8u"]
+[ext_resource type="PackedScene" uid="uid://c1xqk1e1xkhgk" path="res://background.tscn" id="4_7m1x3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_aakov"]
 font_size = 13
@@ -53,6 +54,8 @@ script = ExtResource("2_r2d8u")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(7, 7)
+
+[node name="Background" parent="." instance=ExtResource("4_7m1x3")]
 
 [connection signal="button_down" from="Optionsbutton" to="Optionsbutton" method="_on_button_down"]
 [connection signal="button_down" from="Startbutton" to="Startbutton" method="_on_button_down"]

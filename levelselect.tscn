@@ -1,0 +1,129 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8siejgsjfvdc"]
+
+[ext_resource type="Script" path="res://LevelSelectButton.gd" id="1_wo114"]
+
+[node name="Levelselect" type="Node2D"]
+
+[node name="Button" type="Button" parent="."]
+offset_left = -69.0
+offset_top = -52.0
+offset_right = -37.0
+offset_bottom = -21.0
+text = "1"
+script = ExtResource("1_wo114")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -60.0
+offset_top = -75.0
+offset_right = 59.0
+offset_bottom = -49.0
+text = "Select any level"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = -34.0
+offset_top = -52.0
+offset_right = -2.0
+offset_bottom = -21.0
+text = "1"
+script = ExtResource("1_wo114")
+level = 2
+
+[node name="Button3" type="Button" parent="."]
+offset_left = 2.0
+offset_top = -52.0
+offset_right = 34.0
+offset_bottom = -21.0
+text = "1"
+script = ExtResource("1_wo114")
+level = 3
+
+[node name="Button4" type="Button" parent="."]
+offset_left = 37.0
+offset_top = -52.0
+offset_right = 69.0
+offset_bottom = -21.0
+text = "1"
+script = ExtResource("1_wo114")
+level = 4
+
+[node name="Button5" type="Button" parent="."]
+offset_left = -69.0
+offset_top = -19.0
+offset_right = -37.0
+offset_bottom = 12.0
+text = "1"
+script = ExtResource("1_wo114")
+level = 5
+
+[node name="Button6" type="Button" parent="."]
+offset_left = -34.0
+offset_top = -19.0
+offset_right = -2.0
+offset_bottom = 12.0
+text = "1"
+script = ExtResource("1_wo114")
+level = 6
+
+[node name="Button7" type="Button" parent="."]
+offset_left = 2.0
+offset_top = -19.0
+offset_right = 34.0
+offset_bottom = 12.0
+text = "1"
+script = ExtResource("1_wo114")
+
+[node name="Button8" type="Button" parent="."]
+offset_left = 37.0
+offset_top = -19.0
+offset_right = 69.0
+offset_bottom = 12.0
+text = "1"
+script = ExtResource("1_wo114")
+
+[node name="Button9" type="Button" parent="."]
+offset_left = -69.0
+offset_top = 15.0
+offset_right = -37.0
+offset_bottom = 46.0
+text = "1"
+script = ExtResource("1_wo114")
+
+[node name="Button10" type="Button" parent="."]
+offset_left = -34.0
+offset_top = 15.0
+offset_right = -2.0
+offset_bottom = 46.0
+text = "1"
+script = ExtResource("1_wo114")
+
+[node name="Button11" type="Button" parent="."]
+offset_left = 2.0
+offset_top = 15.0
+offset_right = 34.0
+offset_bottom = 46.0
+text = "1"
+script = ExtResource("1_wo114")
+
+[node name="Button12" type="Button" parent="."]
+offset_left = 37.0
+offset_top = 15.0
+offset_right = 69.0
+offset_bottom = 46.0
+text = "1"
+script = ExtResource("1_wo114")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[connection signal="pressed" from="Button2" to="Button2" method="_on_pressed"]
+[connection signal="pressed" from="Button3" to="Button3" method="_on_pressed"]
+[connection signal="pressed" from="Button4" to="Button4" method="_on_pressed"]
+[connection signal="pressed" from="Button5" to="Button5" method="_on_pressed"]
+[connection signal="pressed" from="Button6" to="Button6" method="_on_pressed"]
+[connection signal="pressed" from="Button7" to="Button7" method="_on_pressed"]
+[connection signal="pressed" from="Button8" to="Button8" method="_on_pressed"]
+[connection signal="pressed" from="Button9" to="Button9" method="_on_pressed"]
+[connection signal="pressed" from="Button10" to="Button10" method="_on_pressed"]
+[connection signal="pressed" from="Button11" to="Button11" method="_on_pressed"]
+[connection signal="pressed" from="Button12" to="Button12" method="_on_pressed"]
