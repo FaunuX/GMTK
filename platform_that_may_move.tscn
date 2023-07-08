@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://edkm405pqjnm"]
+
+[ext_resource type="Script" path="res://swapper_hopper.gd" id="1_dx80p"]
+[ext_resource type="PackedScene" uid="uid://cbmfhqjpm773j" path="res://moving_platform.tscn" id="2_e5mpo"]
+[ext_resource type="PackedScene" uid="uid://cwqdqnr77m7qq" path="res://platform.tscn" id="3_u0qv3"]
+
+[node name="PlatformThatMayMove" type="Node2D"]
+script = ExtResource("1_dx80p")
+is_moving_platform = true
+
+[node name="Scene1" parent="." instance=ExtResource("2_e5mpo")]
+
+[node name="Scene2" parent="." instance=ExtResource("3_u0qv3")]

@@ -6,12 +6,19 @@ enum ValidStates {
 }
 
 @export var state: ValidStates
+@export var is_moving_platform: bool
+@export var offset = Vector2(0, -320)
+@export var duration = 5.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if is_moving_platform:
+		$Scene1.Offset = offset
+		$Scene1.Duration = duration
 	render_state()
 
 func render_state():
+	$Scene2.position = $Scene1.position
 	if state == ValidStates.V1:
 		$Scene1/CollisionShape2D.set_deferred("disabled", false)
 		$Scene1.visible = true

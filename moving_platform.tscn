@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://cbmfhqjpm773j"]
+
+[ext_resource type="Script" path="res://MovingPlatform.gd" id="1_45td8"]
+[ext_resource type="Texture2D" uid="uid://d1x0yqb4pg2gm" path="res://spritesheet_default.png" id="2_81wmy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u3gdv"]
+atlas = ExtResource("2_81wmy")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1afim"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u3gdv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dikb0"]
+size = Vector2(63, 22)
+
+[node name="MovingPlatform" type="AnimatableBody2D"]
+script = ExtResource("1_45td8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_1afim")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 19)
+shape = SubResource("RectangleShape2D_dikb0")
