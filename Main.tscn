@@ -1,10 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://cwq13yg300t1c"]
+[gd_scene load_steps=12 format=3 uid="uid://cwq13yg300t1c"]
 
 [ext_resource type="PackedScene" uid="uid://crg3q6ycx62qw" path="res://Player.tscn" id="1"]
 [ext_resource type="Script" path="res://Main.gd" id="1_62w1g"]
 [ext_resource type="PackedScene" uid="uid://bevbkxf163nw2" path="res://Level.tscn" id="2"]
 [ext_resource type="Texture2D" uid="uid://bss8o32q8qdwx" path="res://icon.png" id="3"]
-[ext_resource type="PackedScene" uid="uid://ljc45x48loyi" path="res://swapper_hopper.tscn" id="5_2uhyi"]
+[ext_resource type="PackedScene" uid="uid://okgrteayunj" path="res://starts_as_platform.tscn" id="4_7ueo5"]
+[ext_resource type="PackedScene" uid="uid://byywuch6jle3n" path="res://starts_as_coin.tscn" id="5_shqqa"]
 [ext_resource type="PackedScene" uid="uid://5xgsr1qofdb7" path="res://gui.tscn" id="5_vl2ej"]
 [ext_resource type="Texture2D" uid="uid://d1x0yqb4pg2gm" path="res://spritesheet_default.png" id="6_3sfvb"]
 [ext_resource type="AudioStream" uid="uid://cp7qi3662m3b1" path="res://341248__jeremysykes__jump00.wav" id="8_xdg86"]
@@ -61,8 +62,13 @@ texture_region_size = Vector2i(64, 64)
 0:0/7/physics_layer_0/angular_velocity = 0.0
 0:0/7/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_kh47p"]
+resource_name = "StartsAsPlatformTiles"
+scenes/1/scene = ExtResource("4_7ueo5")
+
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_34sgi"]
-scenes/1/scene = ExtResource("5_2uhyi")
+resource_name = "StartsAsCoinTiles"
+scenes/2/scene = ExtResource("5_shqqa")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pjumi"]
 texture = ExtResource("6_3sfvb")
@@ -375,6 +381,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_6575m")
 sources/2 = SubResource("TileSetScenesCollectionSource_34sgi")
 sources/5 = SubResource("TileSetAtlasSource_pjumi")
+sources/1 = SubResource("TileSetScenesCollectionSource_kh47p")
 
 [node name="Main" type="Node"]
 script = ExtResource("1_62w1g")
