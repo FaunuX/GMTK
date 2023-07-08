@@ -53,6 +53,7 @@ libraries = {
 }
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 0.705882, 0, 1)
 position = Vector2(0, -1.11422)
 scale = Vector2(1.022, 1)
 sprite_frames = SubResource("SpriteFrames_6yfuf")

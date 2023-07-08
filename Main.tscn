@@ -1,8 +1,4 @@
-<<<<<<< Updated upstream
 [gd_scene load_steps=12 format=3 uid="uid://cwq13yg300t1c"]
-=======
-[gd_scene load_steps=18 format=3 uid="uid://cwq13yg300t1c"]
->>>>>>> Stashed changes
 
 [ext_resource type="PackedScene" uid="uid://crg3q6ycx62qw" path="res://Player.tscn" id="1"]
 [ext_resource type="Script" path="res://Main.gd" id="1_62w1g"]
@@ -12,6 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://byywuch6jle3n" path="res://starts_as_coin.tscn" id="5_shqqa"]
 [ext_resource type="PackedScene" uid="uid://5xgsr1qofdb7" path="res://gui.tscn" id="5_vl2ej"]
 [ext_resource type="Texture2D" uid="uid://d1x0yqb4pg2gm" path="res://spritesheet_default.png" id="6_3sfvb"]
+[ext_resource type="AudioStream" uid="uid://cp7qi3662m3b1" path="res://341248__jeremysykes__jump00.wav" id="8_xdg86"]
+[ext_resource type="AudioStream" uid="uid://dakypj72dufow" path="res://166184__drminky__retro-coin-collect.wav" id="9_o2gs2"]
+[ext_resource type="AudioStream" uid="uid://ewucl38ht5q0" path="res://214455__dan2008__magic-burst.wav" id="10_rpbfg"]
+[ext_resource type="Script" path="res://Switchsound.gd" id="11_m0oyj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6575m"]
 texture = ExtResource("3")
@@ -400,5 +400,17 @@ offset_bottom = 65.0
 
 [node name="Player" parent="." instance=ExtResource("1")]
 position = Vector2(227, 130)
+
+[node name="Jumpsound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_xdg86")
+volume_db = -3.104
+
+[node name="Coinsound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_o2gs2")
+
+[node name="Switchsound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_rpbfg")
+volume_db = 6.215
+script = ExtResource("11_m0oyj")
 
 [connection signal="child_entered_tree" from="Level" to="." method="_on_level_child_entered_tree"]
