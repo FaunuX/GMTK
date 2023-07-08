@@ -1,7 +1,28 @@
-[gd_scene load_steps=3 format=3 uid="uid://b76aa62it2s13"]
+[gd_scene load_steps=9 format=3 uid="uid://b76aa62it2s13"]
 
 [ext_resource type="Script" path="res://Keybindchanger.gd" id="1_jprw6"]
 [ext_resource type="Script" path="res://Backbutton.gd" id="2_mtosr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q43c8"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Theme" id="Theme_27hwf"]
+Button/colors/font_color = Color(0.333333, 0.333333, 0.333333, 1)
+Button/styles/normal = SubResource("StyleBoxFlat_q43c8")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8suoe"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Theme" id="Theme_4a76x"]
+Button/colors/font_color = Color(0.4, 0.4, 0.4, 1)
+Button/styles/normal = SubResource("StyleBoxFlat_8suoe")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aa243"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Theme" id="Theme_gbmjs"]
+Button/colors/font_color = Color(0.34902, 0.34902, 0.34902, 1)
+Button/styles/normal = SubResource("StyleBoxFlat_aa243")
 
 [node name="Options" type="Node2D"]
 
@@ -13,6 +34,7 @@ offset_left = -152.0
 offset_top = -64.0
 offset_right = -16.0
 offset_bottom = -10.0
+theme = SubResource("Theme_27hwf")
 text = "Change keybind:
 swap "
 text_overrun_behavior = 3
@@ -23,6 +45,7 @@ offset_left = 16.0
 offset_top = -64.0
 offset_right = 152.0
 offset_bottom = -10.0
+theme = SubResource("Theme_4a76x")
 text = "Credits"
 text_overrun_behavior = 3
 
@@ -31,6 +54,7 @@ offset_left = -64.0
 offset_top = 40.0
 offset_right = 72.0
 offset_bottom = 94.0
+theme = SubResource("Theme_gbmjs")
 text = "Back"
 text_overrun_behavior = 3
 script = ExtResource("2_mtosr")
