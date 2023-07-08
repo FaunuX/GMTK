@@ -1,12 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://cwqdqnr77m7qq"]
+[gd_scene load_steps=5 format=3 uid="uid://cwqdqnr77m7qq"]
 
-[ext_resource type="Texture2D" uid="uid://bss8o32q8qdwx" path="res://icon.png" id="1_x77sq"]
+[ext_resource type="Texture2D" uid="uid://d1x0yqb4pg2gm" path="res://spritesheet_default.png" id="1_hvf2s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_umc60"]
+atlas = ExtResource("1_hvf2s")
+region = Rect2(192, 256, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5m6v7"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_x77sq")
+"texture": SubResource("AtlasTexture_umc60")
 }],
 "loop": true,
 "name": &"default",
@@ -14,7 +18,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gp0pj"]
-size = Vector2(112, 96)
+size = Vector2(64, 64)
 
 [node name="Platform" type="StaticBody2D"]
 
