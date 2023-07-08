@@ -1,18 +1,34 @@
-[gd_scene load_steps=4 format=3 uid="uid://b3mqwvlo4nyy2"]
+[gd_scene load_steps=9 format=3 uid="uid://b3mqwvlo4nyy2"]
 
+[ext_resource type="FontFile" uid="uid://c8at56y52mmo8" path="res://Chibolddemo-1GD7g.ttf" id="1_2xvef"]
 [ext_resource type="Script" path="res://Optionsbutton.gd" id="1_4arop"]
 [ext_resource type="Script" path="res://Startbutton.gd" id="2_r2d8u"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_aakov"]
 font_size = 13
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gqlkc"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Theme" id="Theme_7vogn"]
+Button/colors/font_color = Color(0.329412, 0.329412, 0.329412, 1)
+Button/styles/normal = SubResource("StyleBoxFlat_gqlkc")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hqilw"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Theme" id="Theme_mxqkk"]
+Button/colors/font_color = Color(0.384314, 0.384314, 0.384314, 1)
+Button/styles/normal = SubResource("StyleBoxFlat_hqilw")
+
 [node name="Title screen" type="Node2D"]
 
 [node name="Label" type="Label" parent="."]
-offset_left = -64.0
-offset_top = -35.0
-offset_right = 96.0
-offset_bottom = -9.0
+offset_left = -80.0
+offset_top = -41.0
+offset_right = 80.0
+offset_bottom = -15.0
+theme_override_fonts/font = ExtResource("1_2xvef")
 text = "The title of the game"
 label_settings = SubResource("LabelSettings_aakov")
 
@@ -21,6 +37,7 @@ offset_left = 8.0
 offset_top = 8.0
 offset_right = 80.0
 offset_bottom = 39.0
+theme = SubResource("Theme_7vogn")
 text = "Options"
 text_overrun_behavior = 3
 script = ExtResource("1_4arop")
@@ -30,6 +47,7 @@ offset_left = -80.0
 offset_top = 8.0
 offset_right = -6.0
 offset_bottom = 39.0
+theme = SubResource("Theme_mxqkk")
 text = "    Play    "
 script = ExtResource("2_r2d8u")
 
