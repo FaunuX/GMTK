@@ -46,6 +46,7 @@ func wants_to_jump():
 
 func jump():
 	$CPUParticles2D.emitting = true
+	$"../Jumpsound".play()
 	velocity.y -= jump_height * jump_height_modifier
 
 func apply_gravity(delta):

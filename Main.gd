@@ -13,6 +13,7 @@ func _process(delta):
 
 func _collect_coin(body, node):
 	coins += 1
+	$Coinsound.play()
 	$CanvasLayer/GUI/Label.text = str(coins)
 	$Level.call_deferred("remove_child", node.get_parent())
 
