@@ -1,7 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://b76aa62it2s13"]
+[gd_scene load_steps=11 format=3 uid="uid://b76aa62it2s13"]
 
 [ext_resource type="Script" path="res://Keybindchanger.gd" id="1_jprw6"]
 [ext_resource type="Script" path="res://Backbutton.gd" id="2_mtosr"]
+[ext_resource type="Script" path="res://RKeybindchanger.gd" id="3_ix673"]
+[ext_resource type="PackedScene" uid="uid://c1xqk1e1xkhgk" path="res://background.tscn" id="4_lxhhw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q43c8"]
 bg_color = Color(1, 1, 1, 1)
@@ -50,15 +52,29 @@ text = "Credits"
 text_overrun_behavior = 3
 
 [node name="Backbutton" type="Button" parent="."]
-offset_left = -64.0
-offset_top = 40.0
-offset_right = 72.0
-offset_bottom = 94.0
+offset_left = -152.0
+offset_top = 11.0
+offset_right = -16.0
+offset_bottom = 65.0
 theme = SubResource("Theme_gbmjs")
 text = "Back"
 text_overrun_behavior = 3
 script = ExtResource("2_mtosr")
 
+[node name="RKeybindchanger" type="Button" parent="."]
+offset_left = 17.0
+offset_top = 8.0
+offset_right = 153.0
+offset_bottom = 62.0
+theme = SubResource("Theme_27hwf")
+text = "Change keybind:
+Reset level"
+text_overrun_behavior = 3
+script = ExtResource("3_ix673")
+
+[node name="Background" parent="." instance=ExtResource("4_lxhhw")]
+
 [connection signal="button_down" from="Keybindchanger" to="Keybindchanger" method="_on_button_down"]
 [connection signal="button_down" from="Creditsbutton" to="Creditsbutton" method="_on_button_down"]
 [connection signal="button_down" from="Backbutton" to="Backbutton" method="_on_button_down"]
+[connection signal="button_down" from="RKeybindchanger" to="RKeybindchanger" method="_on_button_down"]

@@ -90,3 +90,5 @@ func _physics_process(delta):
 	set_floor_stop_on_slope_enabled(true)
 	move_and_slide()
 	velocity = velocity
+	if Input.is_action_just_released("reset"):
+		get_tree().reload_current_scene()

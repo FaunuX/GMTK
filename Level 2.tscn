@@ -1,21 +1,21 @@
-[gd_scene load_steps=18 format=3 uid="uid://cwq13yg300t1c"]
+[gd_scene load_steps=18 format=3 uid="uid://bfe8rsratm5k3"]
 
-[ext_resource type="PackedScene" uid="uid://crg3q6ycx62qw" path="res://Player.tscn" id="1"]
-[ext_resource type="Script" path="res://Main.gd" id="1_tntrv"]
-[ext_resource type="PackedScene" uid="uid://bevbkxf163nw2" path="res://Level.tscn" id="2"]
-[ext_resource type="Texture2D" uid="uid://bss8o32q8qdwx" path="res://icon.png" id="3"]
-[ext_resource type="PackedScene" uid="uid://ksg500hd6nnm" path="res://starts_as_coin.tscn" id="4_fhft0"]
-[ext_resource type="PackedScene" uid="uid://5xgsr1qofdb7" path="res://gui.tscn" id="5_vl2ej"]
-[ext_resource type="PackedScene" uid="uid://dhby7bmg7bghh" path="res://starts_as_platform.tscn" id="5_xm52a"]
-[ext_resource type="Texture2D" uid="uid://d1x0yqb4pg2gm" path="res://spritesheet_default.png" id="6_3sfvb"]
-[ext_resource type="AudioStream" uid="uid://cp7qi3662m3b1" path="res://341248__jeremysykes__jump00.wav" id="8_xdg86"]
-[ext_resource type="AudioStream" uid="uid://dakypj72dufow" path="res://166184__drminky__retro-coin-collect.wav" id="9_o2gs2"]
-[ext_resource type="AudioStream" uid="uid://ewucl38ht5q0" path="res://214455__dan2008__magic-burst.wav" id="10_rpbfg"]
-[ext_resource type="Script" path="res://Switchsound.gd" id="11_m0oyj"]
-[ext_resource type="PackedScene" uid="uid://edkm405pqjnm" path="res://platform_that_may_move.tscn" id="14_fdtlh"]
+[ext_resource type="Script" path="res://Main.gd" id="1_1ymwy"]
+[ext_resource type="PackedScene" uid="uid://bevbkxf163nw2" path="res://Level.tscn" id="2_qlbkx"]
+[ext_resource type="Texture2D" uid="uid://bss8o32q8qdwx" path="res://icon.png" id="3_kxdew"]
+[ext_resource type="PackedScene" uid="uid://ksg500hd6nnm" path="res://starts_as_coin.tscn" id="4_0q7vx"]
+[ext_resource type="PackedScene" uid="uid://dhby7bmg7bghh" path="res://starts_as_platform.tscn" id="5_ipus5"]
+[ext_resource type="Texture2D" uid="uid://d1x0yqb4pg2gm" path="res://spritesheet_default.png" id="6_vcciw"]
+[ext_resource type="PackedScene" uid="uid://5xgsr1qofdb7" path="res://gui.tscn" id="7_yxslk"]
+[ext_resource type="PackedScene" uid="uid://crg3q6ycx62qw" path="res://Player.tscn" id="8_4ldwp"]
+[ext_resource type="AudioStream" uid="uid://cp7qi3662m3b1" path="res://341248__jeremysykes__jump00.wav" id="9_x1sd5"]
+[ext_resource type="AudioStream" uid="uid://dakypj72dufow" path="res://166184__drminky__retro-coin-collect.wav" id="10_yuwf7"]
+[ext_resource type="AudioStream" uid="uid://ewucl38ht5q0" path="res://214455__dan2008__magic-burst.wav" id="11_y8bhj"]
+[ext_resource type="Script" path="res://Switchsound.gd" id="12_6iaad"]
+[ext_resource type="PackedScene" uid="uid://c1xqk1e1xkhgk" path="res://background.tscn" id="13_ao1nj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6575m"]
-texture = ExtResource("3")
+texture = ExtResource("3_kxdew")
 texture_region_size = Vector2i(64, 64)
 0:0/next_alternative_id = 8
 0:0/0 = 0
@@ -64,11 +64,11 @@ texture_region_size = Vector2i(64, 64)
 0:0/7/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_ne0ft"]
-scenes/1/scene = ExtResource("4_fhft0")
-scenes/2/scene = ExtResource("5_xm52a")
+scenes/1/scene = ExtResource("4_0q7vx")
+scenes/2/scene = ExtResource("5_ipus5")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pjumi"]
-texture = ExtResource("6_3sfvb")
+texture = ExtResource("6_vcciw")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -372,44 +372,44 @@ texture_region_size = Vector2i(64, 64)
 9:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 9:9/0/physics_layer_0/angular_velocity = 0.0
 
-[sub_resource type="TileSet" id="1"]
+[sub_resource type="TileSet" id="TileSet_ga5lr"]
 tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_6575m")
 sources/5 = SubResource("TileSetAtlasSource_pjumi")
 sources/1 = SubResource("TileSetScenesCollectionSource_ne0ft")
 
-[node name="Main" type="Node"]
-script = ExtResource("1_tntrv")
+[node name="Level 2" type="Node"]
+script = ExtResource("1_1ymwy")
 
-[node name="Level" parent="." instance=ExtResource("2")]
-tile_set = SubResource("1")
-layer_0/tile_data = PackedInt32Array(0, 327685, 6, 1, 327685, 6, 2, 327685, 6, 3, 327685, 6, 6, 327685, 6, 7, 327685, 6, 8, 327685, 6, 9, 327685, 6, 10, 327685, 6, 11, 327685, 6, 12, 327685, 6, 13, 327685, 6, 14, 327685, 6, 15, 327685, 6, 65551, 327685, 6, 65554, 327685, 6, 131087, 327685, 6, 131088, 327685, 6, 196623, 327685, 6, 196632, 327685, 6, 262150, 327685, 6, 262151, 327685, 6, 262152, 327685, 6, 262159, 327685, 6, 262162, 327685, 6, 262163, 327685, 6, 262168, 327685, 6, 327685, 327685, 6, 327686, 327685, 6, 327687, 327685, 6, 327688, 327685, 6, 327689, 327685, 6, 327695, 327685, 6, 327704, 327685, 6, 393220, 327685, 6, 393221, 327685, 6, 393222, 327685, 6, 393223, 327685, 6, 393224, 327685, 6, 393225, 327685, 6, 393226, 327685, 6, 393236, 327685, 6, 393237, 327685, 6, 393238, 327685, 6, 393240, 327685, 6, 458755, 327685, 6, 458756, 327685, 6, 458757, 327685, 6, 458758, 327685, 6, 458759, 327685, 6, 458760, 327685, 6, 458761, 327685, 6, 458762, 327685, 6, 458763, 327685, 6, 458769, 327685, 6, 458770, 327685, 6, 458776, 327685, 6, 524290, 327685, 6, 524291, 327685, 6, 524292, 327685, 6, 524293, 327685, 6, 524294, 327685, 6, 524295, 327685, 6, 524296, 327685, 6, 524297, 327685, 6, 524298, 327685, 6, 524299, 327685, 6, 524300, 327685, 6, 524312, 327685, 6, 589824, 327685, 6, 589825, 327685, 6, 589826, 327685, 6, 589827, 327685, 6, 589828, 327685, 6, 589829, 327685, 6, 589830, 327685, 6, 589831, 327685, 6, 589832, 327685, 6, 589833, 327685, 6, 589834, 327685, 6, 589835, 327685, 6, 589836, 327685, 6, 589837, 327685, 6, 589838, 327685, 6, 589839, 327685, 6, 589840, 327685, 6, 589841, 327685, 6, 589842, 327685, 6, 589843, 327685, 6, 589844, 327685, 6, 589845, 327685, 6, 589846, 327685, 6, 589847, 327685, 6, 589848, 327685, 6, 2752511, 0, 0, 2555904, 0, 0, 2424832, 0, 0, 2293760, 0, 0, 1310720, 0, 0, 1179648, 0, 0, 1048576, 0, 0, 851968, 0, 0, 720896, 0, 0, 983041, 0, 0, 262145, 327685, 6, 262144, 327685, 6, 327680, 327685, 6, 393216, 327685, 6, 393217, 327685, 6, 327681, 327685, 6, 393215, 327685, 6, 393218, 327685, 6, 393214, 327685, 6, 327678, 327685, 6, 327679, 327685, 6, 196619, 327685, 6, 5, 327685, 6, 4, 327685, 6, 65536, 327685, 6, 131072, 327685, 6, 196608, 327685, 6, 458754, 327685, 6, 65553, 327685, 6, 65552, 327685, 6, 196631, 327685, 6, 196630, 327685, 6, 196629, 327685, 6, 131093, 327685, 6, 65557, 327685, 6, 65556, 327685, 6, 65555, 327685, 6, 262161, 327685, 6, 196615, 327685, 6, 262146, 1, 65536, 262147, 1, 65536, 262148, 1, 65536, 262149, 1, 65536, 327682, 1, 131072, 327683, 1, 131072, 327684, 1, 131072, 393219, 1, 65536)
+[node name="Level" parent="." instance=ExtResource("2_qlbkx")]
+tile_set = SubResource("TileSet_ga5lr")
+layer_0/tile_data = PackedInt32Array(0, 327685, 6, 1, 327685, 6, 2, 327685, 6, 3, 327685, 6, 6, 327685, 6, 7, 327685, 6, 8, 327685, 6, 9, 327685, 6, 10, 327685, 6, 11, 327685, 6, 12, 327685, 6, 13, 327685, 6, 14, 327685, 6, 15, 327685, 6, 131088, 327685, 6, 589824, 327685, 6, 589825, 327685, 6, 589826, 327685, 6, 589827, 327685, 6, 589828, 327685, 6, 589829, 327685, 6, 589830, 327685, 6, 589831, 327685, 6, 589832, 327685, 6, 589833, 327685, 6, 589834, 327685, 6, 589835, 327685, 6, 589836, 327685, 6, 589837, 327685, 6, 589838, 327685, 6, 589839, 327685, 6, 589840, 327685, 6, 262144, 327685, 6, 327680, 327685, 6, 393216, 327685, 6, 5, 327685, 6, 4, 327685, 6, 65536, 327685, 6, 131072, 327685, 6, 196608, 327685, 6, 65552, 327685, 6, 458752, 327685, 6, 524288, 327685, 6, 196624, 327685, 6, 262160, 327685, 6, 327696, 327685, 6, 393232, 327685, 6, 458768, 327685, 6, 524304, 327685, 6, 16, 327685, 6, 524297, 1, 131072, 458761, 1, 131072, 393225, 1, 131072, 327689, 1, 131072, 327690, 1, 131072, 327691, 1, 131072, 327692, 1, 131072, 393228, 1, 131072, 458764, 1, 131072, 524300, 1, 131072, 524299, 1, 131072, 524298, 1, 131072, 458762, 1, 131072, 458763, 1, 131072, 393227, 1, 131072, 393226, 1, 131072, 131082, 1, 65536, 131083, 1, 65536)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="GUI" parent="CanvasLayer" instance=ExtResource("5_vl2ej")]
+[node name="GUI" parent="CanvasLayer" instance=ExtResource("7_yxslk")]
 offset_left = 16.0
 offset_top = 15.0
 offset_right = 56.0
 offset_bottom = 65.0
+metadata/_edit_use_anchors_ = true
 
-[node name="Player" parent="." instance=ExtResource("1")]
+[node name="Player" parent="." instance=ExtResource("8_4ldwp")]
 position = Vector2(227, 130)
 
 [node name="Jumpsound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("8_xdg86")
+stream = ExtResource("9_x1sd5")
 volume_db = -3.104
 
 [node name="Coinsound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("9_o2gs2")
+stream = ExtResource("10_yuwf7")
 
 [node name="Switchsound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("10_rpbfg")
+stream = ExtResource("11_y8bhj")
 volume_db = 6.215
-script = ExtResource("11_m0oyj")
+script = ExtResource("12_6iaad")
 
-[node name="PlatformThatMayMove" parent="." instance=ExtResource("14_fdtlh")]
-position = Vector2(912, 340)
+[node name="Background" parent="." instance=ExtResource("13_ao1nj")]
 
 [connection signal="child_entered_tree" from="Level" to="." method="_on_level_child_entered_tree"]
