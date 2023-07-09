@@ -13,11 +13,16 @@ func _ready():
 
 func render_state():
 	if state == ValidStates.V1:
-		$Scene1/CollisionShape2D.set_deferred("disabled", false)
-		$Scene1.visible = true
+		if is_moving_platform:
+			$Scene1.tween.play()
 		$Scene2/CollisionShape2D.set_deferred("disabled", true)
 		$Scene2.visible = false
+		$Scene1/CollisionShape2D.set_deferred("disabled", false)
+		$Scene1.visible = true
 	else:
+		if is_moving_platform:
+			$Scene2.position = $Scene1.position
+			$Scene1.tween.pause()
 		$Scene1/CollisionShape2D.set_deferred("disabled", true)
 		$Scene1.visible = false
 		$Scene2/CollisionShape2D.set_deferred("disabled", false)
