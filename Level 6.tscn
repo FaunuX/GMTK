@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bu74buu5784vf"]
+[gd_scene load_steps=19 format=3 uid="uid://bu74buu5784vf"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_8djip"]
 [ext_resource type="Texture2D" uid="uid://bss8o32q8qdwx" path="res://icon.png" id="2_j3a56"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" path="res://Switchsound.gd" id="11_g7gda"]
 [ext_resource type="PackedScene" uid="uid://c1xqk1e1xkhgk" path="res://background.tscn" id="12_w60b3"]
 [ext_resource type="PackedScene" uid="uid://edkm405pqjnm" path="res://platform_that_may_move.tscn" id="13_7shym"]
+[ext_resource type="AudioStream" uid="uid://bt072jinsm3pq" path="res://460665__sergequadrado__jolly-fanfares.wav" id="14_fvl6v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6575m"]
 texture = ExtResource("2_j3a56")
@@ -382,6 +383,8 @@ sources/1 = SubResource("TileSetScenesCollectionSource_ne0ft")
 [node name="Level 6" type="Node"]
 script = ExtResource("1_8djip")
 
+[node name="Background" parent="." instance=ExtResource("12_w60b3")]
+
 [node name="Level" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_oybdn")
 format = 2
@@ -411,11 +414,12 @@ stream = ExtResource("10_fkmos")
 volume_db = 6.215
 script = ExtResource("11_g7gda")
 
-[node name="Background" parent="." instance=ExtResource("12_w60b3")]
-
 [node name="PlatformThatMayMove" parent="." instance=ExtResource("13_7shym")]
 position = Vector2(544, 416)
 state = 1
 is_moving_platform = false
+
+[node name="Winsound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_fvl6v")
 
 [connection signal="child_entered_tree" from="Level" to="." method="_on_level_child_entered_tree"]

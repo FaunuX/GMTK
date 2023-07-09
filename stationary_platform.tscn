@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cbmfhqjpm773j"]
+[gd_scene load_steps=5 format=3 uid="uid://dqbjhcfvowspt"]
 
-[ext_resource type="Script" path="res://MovingPlatform.gd" id="1_45td8"]
-[ext_resource type="Texture2D" uid="uid://d1x0yqb4pg2gm" path="res://spritesheet_default.png" id="2_81wmy"]
+[ext_resource type="Texture2D" uid="uid://d1x0yqb4pg2gm" path="res://spritesheet_default.png" id="1_xsvai"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_07f32"]
-atlas = ExtResource("2_81wmy")
+atlas = ExtResource("1_xsvai")
 region = Rect2(384, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0tqd5"]
@@ -21,8 +20,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dikb0"]
 size = Vector2(63, 22)
 
-[node name="MovingPlatform" type="AnimatableBody2D"]
-script = ExtResource("1_45td8")
+[node name="StationaryPlatform" type="AnimatableBody2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 modulate = Color(0, 1, 0, 1)

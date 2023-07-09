@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cnisxd4ou6bpk"]
+[gd_scene load_steps=19 format=3 uid="uid://cnisxd4ou6bpk"]
 
 [ext_resource type="PackedScene" uid="uid://bevbkxf163nw2" path="res://Level.tscn" id="1_7rnj8"]
 [ext_resource type="Script" path="res://Main.gd" id="1_ns3r8"]
@@ -13,6 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://ewucl38ht5q0" path="res://214455__dan2008__magic-burst.wav" id="10_324ab"]
 [ext_resource type="Script" path="res://Switchsound.gd" id="11_y85a0"]
 [ext_resource type="PackedScene" uid="uid://c1xqk1e1xkhgk" path="res://background.tscn" id="13_4yc8k"]
+[ext_resource type="AudioStream" uid="uid://bt072jinsm3pq" path="res://460665__sergequadrado__jolly-fanfares.wav" id="14_wnnlf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6575m"]
 texture = ExtResource("2_shk63")
@@ -382,6 +383,8 @@ sources/1 = SubResource("TileSetScenesCollectionSource_ne0ft")
 [node name="Level 3" type="Node"]
 script = ExtResource("1_ns3r8")
 
+[node name="Background" parent="." instance=ExtResource("13_4yc8k")]
+
 [node name="Level" parent="." instance=ExtResource("1_7rnj8")]
 tile_set = SubResource("TileSet_ga5lr")
 layer_0/tile_data = PackedInt32Array(0, 327685, 6, 1, 327685, 6, 2, 327685, 6, 3, 327685, 6, 6, 327685, 6, 7, 327685, 6, 8, 327685, 6, 9, 327685, 6, 10, 327685, 6, 11, 327685, 6, 12, 327685, 6, 13, 327685, 6, 14, 327685, 6, 15, 327685, 6, 589824, 327685, 6, 589825, 327685, 6, 589826, 327685, 6, 589827, 327685, 6, 589828, 327685, 6, 589829, 327685, 6, 589830, 327685, 6, 589831, 327685, 6, 589832, 327685, 6, 589837, 327685, 6, 589838, 327685, 6, 589839, 327685, 6, 262144, 327685, 6, 327680, 327685, 6, 393216, 327685, 6, 5, 327685, 6, 4, 327685, 6, 65536, 327685, 6, 131072, 327685, 6, 196608, 327685, 6, 589836, 327685, 6, 589835, 327685, 6, 589834, 327685, 6, 589833, 327685, 6, 458752, 327685, 6, 524288, 327685, 6, 196616, 327685, 6, 262152, 327685, 6, 327688, 327685, 6, 393224, 327685, 6, 524297, 1, 131072, 458761, 1, 65536, 524302, 1, 65536, 524301, 1, 65536, 458766, 1, 65536, 458754, 1, 131072, 458753, 1, 131072, 393220, 1, 65536, 393221, 1, 65536, 262150, 1, 131072, 262151, 1, 131072, 17, 327685, 6, 65553, 327685, 6, 131089, 327685, 6, 262161, 327685, 6, 196625, 327685, 6, 327697, 327685, 6, 393233, 327685, 6, 458769, 327685, 6, 524305, 327685, 6, 589841, 327685, 6, 589840, 327685, 6, 16, 327685, 6, 524303, 1, 65536, 458767, 1, 65536, 393231, 1, 65536, 524304, 1, 65536, 458768, 1, 65536, 393232, 1, 65536, 327696, 1, 65536)
@@ -410,6 +413,7 @@ stream = ExtResource("10_324ab")
 volume_db = 6.215
 script = ExtResource("11_y85a0")
 
-[node name="Background" parent="." instance=ExtResource("13_4yc8k")]
+[node name="Winsound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_wnnlf")
 
 [connection signal="child_entered_tree" from="Level" to="." method="_on_level_child_entered_tree"]

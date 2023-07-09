@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cxgi46vs2cde8"]
+[gd_scene load_steps=18 format=3 uid="uid://cxgi46vs2cde8"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_75x8m"]
 [ext_resource type="Texture2D" uid="uid://bss8o32q8qdwx" path="res://icon.png" id="1_uapg6"]
@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://ewucl38ht5q0" path="res://214455__dan2008__magic-burst.wav" id="9_65w1q"]
 [ext_resource type="Script" path="res://Switchsound.gd" id="10_js4de"]
 [ext_resource type="PackedScene" uid="uid://c1xqk1e1xkhgk" path="res://background.tscn" id="11_tcyqi"]
+[ext_resource type="AudioStream" uid="uid://bt072jinsm3pq" path="res://460665__sergequadrado__jolly-fanfares.wav" id="13_8p6at"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6575m"]
 texture = ExtResource("1_uapg6")
@@ -381,6 +382,8 @@ sources/1 = SubResource("TileSetScenesCollectionSource_ne0ft")
 [node name="Level 5" type="Node"]
 script = ExtResource("1_75x8m")
 
+[node name="Background" parent="." instance=ExtResource("11_tcyqi")]
+
 [node name="Level" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_6xs60")
 format = 2
@@ -410,6 +413,7 @@ stream = ExtResource("9_65w1q")
 volume_db = 6.215
 script = ExtResource("10_js4de")
 
-[node name="Background" parent="." instance=ExtResource("11_tcyqi")]
+[node name="Winsound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_8p6at")
 
 [connection signal="child_entered_tree" from="Level" to="." method="_on_level_child_entered_tree"]

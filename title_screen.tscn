@@ -1,12 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://b3mqwvlo4nyy2"]
+[gd_scene load_steps=11 format=3 uid="uid://b3mqwvlo4nyy2"]
 
 [ext_resource type="FontFile" uid="uid://c8at56y52mmo8" path="res://Chibolddemo-1GD7g.ttf" id="1_2xvef"]
 [ext_resource type="Script" path="res://Optionsbutton.gd" id="1_4arop"]
 [ext_resource type="Script" path="res://Startbutton.gd" id="2_r2d8u"]
-[ext_resource type="PackedScene" uid="uid://c1xqk1e1xkhgk" path="res://background.tscn" id="4_7m1x3"]
+[ext_resource type="PackedScene" uid="uid://yr1d2wvx5o58" path="res://cursor.tscn" id="5_scbo2"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_aakov"]
-font_size = 13
+[sub_resource type="Theme" id="Theme_rk56f"]
+Label/colors/font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gqlkc"]
 bg_color = Color(1, 1, 1, 1)
@@ -14,6 +14,9 @@ bg_color = Color(1, 1, 1, 1)
 [sub_resource type="Theme" id="Theme_7vogn"]
 Button/colors/font_color = Color(0.329412, 0.329412, 0.329412, 1)
 Button/styles/normal = SubResource("StyleBoxFlat_gqlkc")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e5lb1"]
+size = Vector2(74, 31)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hqilw"]
 bg_color = Color(1, 1, 1, 1)
@@ -24,14 +27,27 @@ Button/styles/normal = SubResource("StyleBoxFlat_hqilw")
 
 [node name="Title screen" type="Node2D"]
 
-[node name="Label" type="Label" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -1100.0
+offset_top = -865.0
+offset_right = 3354.0
+offset_bottom = 1628.0
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = SubResource("Theme_rk56f")
+
+[node name="Label" type="Label" parent="Control"]
 offset_left = -80.0
-offset_top = -41.0
-offset_right = 80.0
-offset_bottom = -15.0
+offset_top = -36.0
+offset_right = 117.0
+offset_bottom = -16.0
 theme_override_fonts/font = ExtResource("1_2xvef")
+theme_override_font_sizes/font_size = 13
 text = "The title of the game"
-label_settings = SubResource("LabelSettings_aakov")
 
 [node name="Optionsbutton" type="Button" parent="."]
 offset_left = 8.0
@@ -43,6 +59,12 @@ text = "Options"
 text_overrun_behavior = 3
 script = ExtResource("1_4arop")
 
+[node name="Area2D" type="Area2D" parent="Optionsbutton"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Optionsbutton/Area2D"]
+position = Vector2(36, 15.5)
+shape = SubResource("RectangleShape2D_e5lb1")
+
 [node name="Startbutton" type="Button" parent="."]
 offset_left = -80.0
 offset_top = 8.0
@@ -52,10 +74,20 @@ theme = SubResource("Theme_mxqkk")
 text = "    Play    "
 script = ExtResource("2_r2d8u")
 
+[node name="Area2D" type="Area2D" parent="Startbutton"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Startbutton/Area2D"]
+position = Vector2(37, 15.5)
+shape = SubResource("RectangleShape2D_e5lb1")
+
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(7, 7)
 
-[node name="Background" parent="." instance=ExtResource("4_7m1x3")]
+[node name="Cursor" parent="." instance=ExtResource("5_scbo2")]
 
 [connection signal="button_down" from="Optionsbutton" to="Optionsbutton" method="_on_button_down"]
+[connection signal="area_entered" from="Optionsbutton/Area2D" to="Optionsbutton" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Optionsbutton/Area2D" to="Optionsbutton" method="_on_area_2d_area_exited"]
 [connection signal="button_down" from="Startbutton" to="Startbutton" method="_on_button_down"]
+[connection signal="area_entered" from="Startbutton/Area2D" to="Startbutton" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Startbutton/Area2D" to="Startbutton" method="_on_area_2d_area_exited"]
