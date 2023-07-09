@@ -15,6 +15,7 @@ func _ready():
 	if is_moving_platform:
 		$Scene1.Offset = offset
 		$Scene1.Duration = duration
+		$Scene1.start_tween()
 	render_state()
 
 func render_state():

@@ -417,7 +417,6 @@ script = ExtResource("11_g7gda")
 [node name="PlatformThatMayMove" parent="." instance=ExtResource("13_7shym")]
 position = Vector2(544, 416)
 state = 1
-is_moving_platform = false
 
 [node name="Winsound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_fvl6v")

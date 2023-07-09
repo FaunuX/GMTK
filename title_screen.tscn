@@ -41,6 +41,7 @@ offset_bottom = 40.0
 theme = SubResource("Theme_rk56f")
 
 [node name="Label" type="Label" parent="Control"]
+layout_mode = 0
 offset_left = -80.0
 offset_top = -36.0
 offset_right = 117.0

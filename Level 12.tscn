@@ -404,6 +404,7 @@ position = Vector2(575, 517)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-2, -194)
+position_smoothing_enabled = true
 
 [node name="Jumpsound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_wodyu")
