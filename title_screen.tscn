@@ -28,10 +28,11 @@ Button/styles/normal = SubResource("StyleBoxFlat_hqilw")
 [node name="Title screen" type="Node2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -1100.0
-offset_top = -865.0
-offset_right = 3354.0
-offset_bottom = 1628.0
+z_index = -5
+offset_left = -91.0
+offset_top = -54.0
+offset_right = 96.0
+offset_bottom = 55.0
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -44,11 +45,12 @@ theme = SubResource("Theme_rk56f")
 layout_mode = 0
 offset_left = -80.0
 offset_top = -36.0
-offset_right = 117.0
+offset_right = 80.0
 offset_bottom = -16.0
 theme_override_fonts/font = ExtResource("1_2xvef")
 theme_override_font_sizes/font_size = 13
-text = "The title of the game"
+text = "Eggshifter"
+horizontal_alignment = 1
 
 [node name="Optionsbutton" type="Button" parent="."]
 offset_left = 8.0

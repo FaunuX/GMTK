@@ -36,17 +36,17 @@ func next_level():
 		scene = 11
 	if str(get_tree().current_scene.get_path()) == "/root/Level 11":
 		scene = 12
-	print(get_tree().current_scene.get_path())
 	get_tree().change_scene_to_file("res://Level " + str(scene) + ".tscn")
 
 
 func _collect_coin(body, node):
-	coins += 1
-	$Coinsound.play()
-	$CanvasLayer/GUI/Label.text = str(coins)
-	$Level.call_deferred("remove_child", node.get_parent().get_parent())
-	if coins == total_coins:
-		next_level()
+	if str(body.get_path()).ends_with("Player"):
+		coins += 1
+		$Coinsound.play()
+		$CanvasLayer/GUI/Label.text = str(coins)
+		$Level.call_deferred("remove_child", node.get_parent().get_parent())
+		if coins == total_coins:
+			next_level()
 
 
 
