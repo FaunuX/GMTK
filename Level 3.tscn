@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cnisxd4ou6bpk"]
+[gd_scene load_steps=20 format=3 uid="uid://cnisxd4ou6bpk"]
 
 [ext_resource type="PackedScene" uid="uid://bevbkxf163nw2" path="res://Level.tscn" id="1_7rnj8"]
 [ext_resource type="Script" path="res://Main.gd" id="1_ns3r8"]
@@ -380,6 +380,9 @@ sources/0 = SubResource("TileSetAtlasSource_6575m")
 sources/5 = SubResource("TileSetAtlasSource_pjumi")
 sources/1 = SubResource("TileSetScenesCollectionSource_ne0ft")
 
+[sub_resource type="Theme" id="Theme_d77tw"]
+Label/colors/font_color = Color(0, 0, 0, 1)
+
 [node name="Level 3" type="Node"]
 script = ExtResource("1_ns3r8")
 
@@ -415,5 +418,15 @@ script = ExtResource("11_y85a0")
 
 [node name="Winsound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_wnnlf")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 75.0
+offset_top = 71.0
+offset_right = 115.0
+offset_bottom = 94.0
+theme = SubResource("Theme_d77tw")
+theme_override_font_sizes/font_size = 20
+text = "The heist
+"
 
 [connection signal="child_entered_tree" from="Level" to="." method="_on_level_child_entered_tree"]

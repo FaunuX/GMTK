@@ -34,10 +34,10 @@ func _input(event):
 
 
 func _on_area_2d_area_entered(area):
-	if area == $"../Cursor":
+	if area == $"../../Cursor":
 		clickdetecting = true
 
 
 func _on_area_2d_area_exited(area):
-	if area == $"../Cursor":
+	if area == $"../../Cursor":
 		clickdetecting = false

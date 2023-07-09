@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://buiqcawt0vnw6"]
+[gd_scene load_steps=20 format=3 uid="uid://buiqcawt0vnw6"]
 
 [ext_resource type="Texture2D" uid="uid://bss8o32q8qdwx" path="res://icon.png" id="1_0nmbs"]
 [ext_resource type="Script" path="res://Main.gd" id="1_6l5of"]
@@ -380,6 +380,9 @@ sources/0 = SubResource("TileSetAtlasSource_6575m")
 sources/5 = SubResource("TileSetAtlasSource_pjumi")
 sources/1 = SubResource("TileSetScenesCollectionSource_ne0ft")
 
+[sub_resource type="Theme" id="Theme_sqip5"]
+Label/colors/font_color = Color(0, 0, 0, 1)
+
 [node name="Level 12" type="Node"]
 script = ExtResource("1_6l5of")
 
@@ -420,6 +423,7 @@ script = ExtResource("10_aqdyx")
 
 [node name="Winsound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_ulmtq")
+volume_db = -11.727
 
 [node name="PlatformThatMayMove2" parent="." instance=ExtResource("12_rgxko")]
 position = Vector2(672, 546)
@@ -428,5 +432,15 @@ state = 1
 [node name="PlatformThatMayMove4" parent="." instance=ExtResource("12_rgxko")]
 position = Vector2(1632, 545)
 state = 1
+
+[node name="Label" type="Label" parent="."]
+offset_left = 75.0
+offset_top = 71.0
+offset_right = 115.0
+offset_bottom = 94.0
+theme = SubResource("Theme_sqip5")
+theme_override_font_sizes/font_size = 20
+text = "The heist, part 2
+"
 
 [connection signal="child_entered_tree" from="Level" to="." method="_on_level_child_entered_tree"]

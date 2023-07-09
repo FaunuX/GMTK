@@ -5,22 +5,22 @@
 [ext_resource type="Script" path="res://RKeybindchanger.gd" id="3_ix673"]
 [ext_resource type="PackedScene" uid="uid://yr1d2wvx5o58" path="res://cursor.tscn" id="5_rg8nm"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q43c8"]
-bg_color = Color(1, 1, 1, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ux4rl"]
+bg_color = Color(0.831373, 0.54902, 0, 1)
 
-[sub_resource type="Theme" id="Theme_27hwf"]
-Button/colors/font_color = Color(0.333333, 0.333333, 0.333333, 1)
-Button/styles/normal = SubResource("StyleBoxFlat_q43c8")
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vnpuw"]
+bg_color = Color(0.917647, 0.701961, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1kk3t"]
+bg_color = Color(0.792157, 0.545098, 0, 1)
+
+[sub_resource type="Theme" id="Theme_2r50j"]
+Button/styles/hover = SubResource("StyleBoxFlat_ux4rl")
+Button/styles/normal = SubResource("StyleBoxFlat_vnpuw")
+Button/styles/pressed = SubResource("StyleBoxFlat_1kk3t")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yyjol"]
 size = Vector2(136, 54)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bt2di"]
-bg_color = Color(1, 1, 1, 1)
-
-[sub_resource type="Theme" id="Theme_gbmjs"]
-Button/colors/font_color = Color(0.34902, 0.34902, 0.34902, 1)
-Button/styles/normal = SubResource("StyleBoxFlat_bt2di")
 
 [node name="Options" type="Node2D"]
 
@@ -30,67 +30,71 @@ offset_top = -865.0
 offset_right = 3354.0
 offset_bottom = 1628.0
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3, 3)
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = SubResource("Theme_2r50j")
 
-[node name="Keybindchanger" type="Button" parent="."]
-offset_left = -152.0
-offset_top = -64.0
-offset_right = -16.0
-offset_bottom = -10.0
-theme = SubResource("Theme_27hwf")
-text = "Change keybind:
-swap "
-text_overrun_behavior = 3
-script = ExtResource("1_jprw6")
-
-[node name="Area2D" type="Area2D" parent="Keybindchanger"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Keybindchanger/Area2D"]
-position = Vector2(68, 27)
-shape = SubResource("RectangleShape2D_yyjol")
-
-[node name="Backbutton" type="Button" parent="."]
-offset_left = -152.0
-offset_top = 11.0
-offset_right = -16.0
-offset_bottom = 65.0
-theme = SubResource("Theme_gbmjs")
-text = "Back"
-text_overrun_behavior = 3
-script = ExtResource("2_mtosr")
-
-[node name="Area2D" type="Area2D" parent="Backbutton"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Backbutton/Area2D"]
-position = Vector2(68, 27)
-shape = SubResource("RectangleShape2D_yyjol")
-
-[node name="RKeybindchanger" type="Button" parent="."]
+[node name="RKeybindchanger" type="Button" parent="Control"]
 offset_left = 15.0
 offset_top = -63.0
 offset_right = 151.0
 offset_bottom = -9.0
-theme = SubResource("Theme_27hwf")
 text = "Change keybind:
 Reset level"
 text_overrun_behavior = 3
 script = ExtResource("3_ix673")
 
-[node name="Area2D" type="Area2D" parent="RKeybindchanger"]
+[node name="Area2D" type="Area2D" parent="Control/RKeybindchanger"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RKeybindchanger/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Control/RKeybindchanger/Area2D"]
 position = Vector2(68, 27)
 shape = SubResource("RectangleShape2D_yyjol")
 
+[node name="Backbutton" type="Button" parent="Control"]
+offset_left = -152.0
+offset_top = 11.0
+offset_right = -16.0
+offset_bottom = 65.0
+text = "Back"
+text_overrun_behavior = 3
+script = ExtResource("2_mtosr")
+
+[node name="Area2D" type="Area2D" parent="Control/Backbutton"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Control/Backbutton/Area2D"]
+position = Vector2(68, 27)
+shape = SubResource("RectangleShape2D_yyjol")
+
+[node name="Keybindchanger" type="Button" parent="Control"]
+offset_left = -152.0
+offset_top = -64.0
+offset_right = -16.0
+offset_bottom = -10.0
+text = "Change keybind:
+swap "
+text_overrun_behavior = 3
+script = ExtResource("1_jprw6")
+
+[node name="Area2D" type="Area2D" parent="Control/Keybindchanger"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Control/Keybindchanger/Area2D"]
+position = Vector2(68, 27)
+shape = SubResource("RectangleShape2D_yyjol")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+
 [node name="Cursor" parent="." instance=ExtResource("5_rg8nm")]
 
-[connection signal="button_down" from="Keybindchanger" to="Keybindchanger" method="_on_button_down"]
-[connection signal="area_entered" from="Keybindchanger/Area2D" to="Keybindchanger" method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="Keybindchanger/Area2D" to="Keybindchanger" method="_on_area_2d_area_exited"]
-[connection signal="button_down" from="Backbutton" to="Backbutton" method="_on_button_down"]
-[connection signal="area_entered" from="Backbutton/Area2D" to="Backbutton" method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="Backbutton/Area2D" to="Backbutton" method="_on_area_2d_area_exited"]
-[connection signal="button_down" from="RKeybindchanger" to="RKeybindchanger" method="_on_button_down"]
-[connection signal="area_entered" from="RKeybindchanger/Area2D" to="RKeybindchanger" method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="RKeybindchanger/Area2D" to="RKeybindchanger" method="_on_area_2d_area_exited"]
+[connection signal="button_down" from="Control/RKeybindchanger" to="Control/RKeybindchanger" method="_on_button_down"]
+[connection signal="area_entered" from="Control/RKeybindchanger/Area2D" to="Control/RKeybindchanger" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Control/RKeybindchanger/Area2D" to="Control/RKeybindchanger" method="_on_area_2d_area_exited"]
+[connection signal="button_down" from="Control/Backbutton" to="Control/Backbutton" method="_on_button_down"]
+[connection signal="area_entered" from="Control/Backbutton/Area2D" to="Control/Backbutton" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Control/Backbutton/Area2D" to="Control/Backbutton" method="_on_area_2d_area_exited"]
+[connection signal="button_down" from="Control/Keybindchanger" to="Control/Keybindchanger" method="_on_button_down"]
+[connection signal="area_entered" from="Control/Keybindchanger/Area2D" to="Control/Keybindchanger" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Control/Keybindchanger/Area2D" to="Control/Keybindchanger" method="_on_area_2d_area_exited"]

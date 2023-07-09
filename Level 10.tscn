@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://br70lrvq3wu2p"]
+[gd_scene load_steps=20 format=3 uid="uid://c6ka2u2djbuby"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_kkd0y"]
 [ext_resource type="Texture2D" uid="uid://bss8o32q8qdwx" path="res://icon.png" id="1_nj3rk"]
@@ -380,6 +380,9 @@ sources/0 = SubResource("TileSetAtlasSource_6575m")
 sources/5 = SubResource("TileSetAtlasSource_pjumi")
 sources/1 = SubResource("TileSetScenesCollectionSource_ne0ft")
 
+[sub_resource type="Theme" id="Theme_x16vd"]
+Label/colors/font_color = Color(0, 0, 0, 1)
+
 [node name="Level 10" type="Node"]
 script = ExtResource("1_kkd0y")
 
@@ -388,7 +391,7 @@ script = ExtResource("1_kkd0y")
 [node name="Level" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_4hd3j")
 format = 2
-layer_0/tile_data = PackedInt32Array(0, 327685, 6, 1, 327685, 6, 2, 327685, 6, 3, 327685, 6, 6, 327685, 6, 7, 327685, 6, 8, 327685, 6, 9, 327685, 6, 10, 327685, 6, 11, 327685, 6, 12, 327685, 6, 13, 327685, 6, 14, 327685, 6, 15, 327685, 6, 589824, 327685, 6, 589825, 327685, 6, 589826, 327685, 6, 589827, 327685, 6, 589838, 327685, 6, 589839, 327685, 6, 262144, 327685, 6, 327680, 327685, 6, 393216, 327685, 6, 5, 327685, 6, 4, 327685, 6, 65536, 327685, 6, 131072, 327685, 6, 196608, 327685, 6, 458752, 327685, 6, 524288, 327685, 6, 17, 327685, 6, 65553, 327685, 6, 131089, 327685, 6, 262161, 327685, 6, 196625, 327685, 6, 327697, 327685, 6, 589841, 327685, 6, 589840, 327685, 6, 16, 327685, 6, 393233, 327685, 6, 458769, 327685, 6, 524305, 327685, 6, 655371, 327685, 6, 655370, 327685, 6, 655369, 327685, 6, 655368, 327685, 6, 655367, 327685, 6, 655366, 327685, 6, 655372, 327685, 6, 589836, 327685, 6, 589837, 327685, 6, 196611, 327685, 6, 196610, 327685, 6, 196609, 327685, 6, 196620, 327685, 6, 196621, 327685, 6, 196623, 327685, 6, 196624, 327685, 6, 262158, 1, 131072, 327694, 1, 131072, 131073, 1, 65536, 262145, 1, 131072, 589828, 327685, 6, 589829, 327685, 6, 655365, 327685, 6, 196612, 327685, 6, 196613, 327685, 6, 393217, 327685, 6, 393218, 327685, 6, 393219, 327685, 6, 393220, 327685, 6, 393221, 327685, 6, 327681, 1, 131072)
+layer_0/tile_data = PackedInt32Array(0, 327685, 6, 1, 327685, 6, 2, 327685, 6, 3, 327685, 6, 6, 327685, 6, 7, 327685, 6, 8, 327685, 6, 9, 327685, 6, 10, 327685, 6, 11, 327685, 6, 12, 327685, 6, 13, 327685, 6, 14, 327685, 6, 15, 327685, 6, 589824, 327685, 6, 589825, 327685, 6, 589826, 327685, 6, 589827, 327685, 6, 589828, 327685, 6, 589829, 327685, 6, 589830, 327685, 6, 589831, 327685, 6, 589832, 327685, 6, 589837, 327685, 6, 589838, 327685, 6, 589839, 327685, 6, 262144, 327685, 6, 327680, 327685, 6, 393216, 327685, 6, 5, 327685, 6, 4, 327685, 6, 65536, 327685, 6, 131072, 327685, 6, 196608, 327685, 6, 589836, 327685, 6, 589835, 327685, 6, 589833, 327685, 6, 458752, 327685, 6, 524288, 327685, 6, 17, 327685, 6, 65553, 327685, 6, 131089, 327685, 6, 262161, 327685, 6, 196625, 327685, 6, 327697, 327685, 6, 589841, 327685, 6, 589840, 327685, 6, 16, 327685, 6, 393233, 327685, 6, 458769, 327685, 6, 524305, 327685, 6, 589834, 327685, 6, 458758, 327685, 6, 458759, 327685, 6, 458760, 327685, 6, 327690, 327685, 6, 327691, 327685, 6, 327692, 327685, 6, 393222, 1, 65536, 393223, 1, 65536, 393224, 1, 65536, 262154, 1, 65536, 262155, 1, 65536, 262156, 1, 65536, 65552, 1, 131072)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -400,7 +403,7 @@ offset_bottom = 65.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Player" parent="." instance=ExtResource("6_4d6u0")]
-position = Vector2(123, 522)
+position = Vector2(808, 517)
 
 [node name="Jumpsound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_yhov6")
@@ -414,42 +417,21 @@ stream = ExtResource("9_22gph")
 volume_db = 6.215
 script = ExtResource("10_ma138")
 
-[node name="PlatformThatMayMove2" parent="." instance=ExtResource("12_jk50i")]
-position = Vector2(480, 604)
-state = 1
-offset = Vector2(0, -400)
-
-[node name="PlatformThatMayMove3" parent="." instance=ExtResource("12_jk50i")]
-position = Vector2(416, 604)
-state = 1
-offset = Vector2(0, -400)
-
-[node name="PlatformThatMayMove5" parent="." instance=ExtResource("12_jk50i")]
-position = Vector2(544, 604)
-state = 1
-offset = Vector2(0, -400)
-
-[node name="PlatformThatMayMove6" parent="." instance=ExtResource("12_jk50i")]
-position = Vector2(736, 604)
-state = 1
-offset = Vector2(0, -400)
-
-[node name="PlatformThatMayMove7" parent="." instance=ExtResource("12_jk50i")]
-position = Vector2(672, 604)
-state = 1
-offset = Vector2(0, -400)
-
-[node name="PlatformThatMayMove8" parent="." instance=ExtResource("12_jk50i")]
-position = Vector2(608, 604)
-state = 1
-offset = Vector2(0, -400)
-
 [node name="Winsound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_sayes")
 
-[node name="PlatformThatMayMove9" parent="." instance=ExtResource("12_jk50i")]
-position = Vector2(802, 226)
-state = 1
-offset = Vector2(250, 0)
+[node name="PlatformThatMayMove2" parent="." instance=ExtResource("12_jk50i")]
+position = Vector2(96, 225)
+offset = Vector2(1e+10, 0)
+duration = 9e+07
+
+[node name="Label" type="Label" parent="."]
+offset_left = 75.0
+offset_top = 71.0
+offset_right = 115.0
+offset_bottom = 94.0
+theme = SubResource("Theme_x16vd")
+theme_override_font_sizes/font_size = 20
+text = "Beat the train"
 
 [connection signal="child_entered_tree" from="Level" to="." method="_on_level_child_entered_tree"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cxgi46vs2cde8"]
+[gd_scene load_steps=19 format=3 uid="uid://cxgi46vs2cde8"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_75x8m"]
 [ext_resource type="Texture2D" uid="uid://bss8o32q8qdwx" path="res://icon.png" id="1_uapg6"]
@@ -379,6 +379,9 @@ sources/0 = SubResource("TileSetAtlasSource_6575m")
 sources/5 = SubResource("TileSetAtlasSource_pjumi")
 sources/1 = SubResource("TileSetScenesCollectionSource_ne0ft")
 
+[sub_resource type="Theme" id="Theme_pbspv"]
+Label/colors/font_color = Color(0, 0, 0, 1)
+
 [node name="Level 5" type="Node"]
 script = ExtResource("1_75x8m")
 
@@ -415,5 +418,14 @@ script = ExtResource("10_js4de")
 
 [node name="Winsound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_8p6at")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 75.0
+offset_top = 71.0
+offset_right = 115.0
+offset_bottom = 94.0
+theme = SubResource("Theme_pbspv")
+theme_override_font_sizes/font_size = 20
+text = "The tower"
 
 [connection signal="child_entered_tree" from="Level" to="." method="_on_level_child_entered_tree"]

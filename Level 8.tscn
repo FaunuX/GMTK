@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://blah7u7y5j61r"]
+[gd_scene load_steps=20 format=3 uid="uid://blah7u7y5j61r"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_4pfj7"]
 [ext_resource type="Texture2D" uid="uid://bss8o32q8qdwx" path="res://icon.png" id="1_trxfd"]
@@ -380,6 +380,9 @@ sources/0 = SubResource("TileSetAtlasSource_6575m")
 sources/5 = SubResource("TileSetAtlasSource_pjumi")
 sources/1 = SubResource("TileSetScenesCollectionSource_ne0ft")
 
+[sub_resource type="Theme" id="Theme_pspgd"]
+Label/colors/font_color = Color(0, 0, 0, 1)
+
 [node name="Level 8" type="Node"]
 script = ExtResource("1_4pfj7")
 
@@ -388,7 +391,7 @@ script = ExtResource("1_4pfj7")
 [node name="Level" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_4hd3j")
 format = 2
-layer_0/tile_data = PackedInt32Array(0, 327685, 6, 1, 327685, 6, 2, 327685, 6, 3, 327685, 6, 6, 327685, 6, 7, 327685, 6, 8, 327685, 6, 9, 327685, 6, 10, 327685, 6, 11, 327685, 6, 12, 327685, 6, 13, 327685, 6, 14, 327685, 6, 15, 327685, 6, 589824, 327685, 6, 589825, 327685, 6, 589826, 327685, 6, 589827, 327685, 6, 589828, 327685, 6, 589829, 327685, 6, 589830, 327685, 6, 589831, 327685, 6, 589832, 327685, 6, 589837, 327685, 6, 589838, 327685, 6, 589839, 327685, 6, 262144, 327685, 6, 327680, 327685, 6, 393216, 327685, 6, 5, 327685, 6, 4, 327685, 6, 65536, 327685, 6, 131072, 327685, 6, 196608, 327685, 6, 589836, 327685, 6, 589835, 327685, 6, 589834, 327685, 6, 589833, 327685, 6, 458752, 327685, 6, 524288, 327685, 6, 17, 327685, 6, 65553, 327685, 6, 131089, 327685, 6, 262161, 327685, 6, 196625, 327685, 6, 327697, 327685, 6, 589841, 327685, 6, 589840, 327685, 6, 16, 327685, 6, 393233, 327685, 6, 458769, 327685, 6, 524305, 327685, 6, 131078, 1, 65536, 131082, 1, 131072)
+layer_0/tile_data = PackedInt32Array(0, 327685, 6, 1, 327685, 6, 2, 327685, 6, 3, 327685, 6, 6, 327685, 6, 7, 327685, 6, 8, 327685, 6, 9, 327685, 6, 10, 327685, 6, 11, 327685, 6, 12, 327685, 6, 13, 327685, 6, 14, 327685, 6, 15, 327685, 6, 589824, 327685, 6, 589825, 327685, 6, 589826, 327685, 6, 589827, 327685, 6, 589828, 327685, 6, 589829, 327685, 6, 589830, 327685, 6, 589831, 327685, 6, 589832, 327685, 6, 589837, 327685, 6, 589838, 327685, 6, 589839, 327685, 6, 262144, 327685, 6, 327680, 327685, 6, 393216, 327685, 6, 5, 327685, 6, 4, 327685, 6, 65536, 327685, 6, 131072, 327685, 6, 196608, 327685, 6, 589836, 327685, 6, 589835, 327685, 6, 589834, 327685, 6, 589833, 327685, 6, 458752, 327685, 6, 524288, 327685, 6, 17, 327685, 6, 65553, 327685, 6, 131089, 327685, 6, 262161, 327685, 6, 196625, 327685, 6, 327697, 327685, 6, 589841, 327685, 6, 589840, 327685, 6, 16, 327685, 6, 393233, 327685, 6, 458769, 327685, 6, 524305, 327685, 6, 131080, 1, 65536)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -418,11 +421,25 @@ script = ExtResource("10_kdap3")
 stream = ExtResource("14_w6ouq")
 
 [node name="PlatformThatMayMove3" parent="." instance=ExtResource("12_qy60p")]
-position = Vector2(680, 454)
-offset = Vector2(-250, 0)
+position = Vector2(1057, 487)
+offset = Vector2(-950, 0)
 
 [node name="PlatformThatMayMove4" parent="." instance=ExtResource("12_qy60p")]
-position = Vector2(419, 342)
-offset = Vector2(250, 0)
+position = Vector2(97, 354)
+offset = Vector2(950, 0)
+
+[node name="PlatformThatMayMove5" parent="." instance=ExtResource("12_qy60p")]
+position = Vector2(1057, 234)
+offset = Vector2(-950, 0)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 75.0
+offset_top = 71.0
+offset_right = 115.0
+offset_bottom = 94.0
+theme = SubResource("Theme_pspgd")
+theme_override_font_sizes/font_size = 20
+text = "The grinder
+"
 
 [connection signal="child_entered_tree" from="Level" to="." method="_on_level_child_entered_tree"]
