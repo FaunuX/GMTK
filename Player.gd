@@ -26,8 +26,12 @@ func get_horizontal_movement():
 	var dir = 0
 	if Input.is_action_pressed("move_right"):
 		dir += 1
-	if Input.is_action_pressed("move_left"):
+		rotation = deg_to_rad(10)
+	elif Input.is_action_pressed("move_left"):
 		dir -= 1
+		rotation = deg_to_rad(-10)
+	else:
+		rotation = deg_to_rad(0)
 	if dir != 0:
 		velocity.x = lerpf(velocity.x, dir * move_speed * move_speed_modifier, acceleration)
 		flip_animated_sprite(dir)
