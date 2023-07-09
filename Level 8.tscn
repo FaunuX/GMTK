@@ -417,14 +417,12 @@ script = ExtResource("10_kdap3")
 [node name="Winsound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_w6ouq")
 
-[node name="PlatformThatMayMove2" parent="." instance=ExtResource("12_qy60p")]
-position = Vector2(544, 546)
-offset = Vector2(-440, 0)
-
 [node name="PlatformThatMayMove3" parent="." instance=ExtResource("12_qy60p")]
-position = Vector2(544, 416)
-offset = Vector2(-440, 0)
+position = Vector2(680, 454)
+offset = Vector2(-250, 0)
 
 [node name="PlatformThatMayMove4" parent="." instance=ExtResource("12_qy60p")]
-position = Vector2(543, 285)
-offset = Vector2(-440, 0)
+position = Vector2(419, 342)
+offset = Vector2(250, 0)
+
+[connection signal="child_entered_tree" from="Level" to="." method="_on_level_child_entered_tree"]

@@ -424,16 +424,9 @@ stream = ExtResource("14_ulmtq")
 [node name="PlatformThatMayMove2" parent="." instance=ExtResource("12_rgxko")]
 position = Vector2(672, 546)
 state = 1
-offset = Vector2(-440, 0)
-
-[node name="PlatformThatMayMove3" parent="." instance=ExtResource("12_rgxko")]
-position = Vector2(674, 225)
-state = 1
-offset = Vector2(-440, 0)
 
 [node name="PlatformThatMayMove4" parent="." instance=ExtResource("12_rgxko")]
 position = Vector2(1632, 545)
 state = 1
-offset = Vector2(-440, 0)
 
 [connection signal="child_entered_tree" from="Level" to="." method="_on_level_child_entered_tree"]
